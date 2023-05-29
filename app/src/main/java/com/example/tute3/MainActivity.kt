@@ -10,6 +10,7 @@ import com.example.tute3.models.Calculator
 class MainActivity : AppCompatActivity() {
     lateinit var edtNumber1: EditText
     lateinit var edtNumber2: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     fun buttonClick(v: View){
         var ans = 0.0
+
+        //create an object for Calculator class
         val calculator = Calculator(
             edtNumber1.text.toString().toDouble(),
             edtNumber2.text.toString().toDouble())
@@ -35,8 +38,6 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("answer", ans)
         startActivity(intent)
         finish()
-
-
 
     }
 
